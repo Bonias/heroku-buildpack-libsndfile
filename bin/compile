@@ -18,9 +18,11 @@ mv libsndfile-1.0.25 $SRC_DIR
 cd $SRC_DIR
 ./configure --prefix=$DIR --disable-static && make && make install
 
-echo "exporting PATH and LIBRARY_PATH" | indent
+echo "exporting PATH and LIBRARY_PATH"
 PROFILE_PATH="$BUILD_DIR/.profile.d/libsndfile.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:$HOME/vendor/libsndfile/bin"' >> $PROFILE_PATH
 echo "export LIBRARY_PATH=\"/app/vendor/libsndfile/lib/:$LIBRARY_PATH\"" >> $PROFILE_PATH
 echo "export LD_LIBRARY_PATH=\"/app/vendor/libsndfile/lib/:$LD_LIBRARY_PATH\"" >> $PROFILE_PATH
+
+echo "-----> Installed libsndfile 1.0.25"
