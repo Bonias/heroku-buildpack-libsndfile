@@ -3,7 +3,7 @@ echo "-----> Installing libsndfile 1.0.25"
 
 BUILD_DIR=$1
 
-$DIR=BUILD_DIR/vendor/libsndfile
+DIR=$BUILD_DIR/vendor/libsndfile
 SRC_DIR=$DIR/src
 URL=http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.25.tar.gz
 
