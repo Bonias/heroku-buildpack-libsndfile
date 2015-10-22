@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 echo "-----> Installing libsndfile 1.0.25"
-# change to the the BUILD_DIR ($1)
-cd $1
 
-DIR=$1/vendor/libsndfile
+DIR=/app/vendor/libsndfile
 SRC_DIR=$DIR/src
 URL=http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.25.tar.gz
 
