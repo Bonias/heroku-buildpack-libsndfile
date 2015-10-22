@@ -24,7 +24,7 @@ PROFILE_PATH="$BUILD_DIR/.profile.d/libsndfile.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 
 echo 'export PATH="$PATH:$HOME/vendor/libsndfile/bin"' >> $PROFILE_PATH
-echo "export LIBRARY_PATH=\"/app/vendor/libsndfile/lib/:$LIB_DIR/libsndfile/lib/:$LIBRARY_PATH\"" >> $PROFILE_PATH
-echo "export LD_LIBRARY_PATH=\"/app/vendor/libsndfile/lib/:$LIB_DIR/libsndfile/lib/:$LD_LIBRARY_PATH\"" >> $PROFILE_PATH
+echo "export LIBRARY_PATH=\"/app/vendor/libsndfile/lib:$LIB_DIR:$LIBRARY_PATH\"" >> $PROFILE_PATH
+echo "export LD_LIBRARY_PATH=\"/app/vendor/libsndfile/lib:$LIB_DIR:$LD_LIBRARY_PATH\"" >> $PROFILE_PATH
 
 echo "-----> Installed libsndfile 1.0.25"
