@@ -1,7 +1,2 @@
-#!/usr/bin/env bash
-cat << EOF
----
-config_vars:
-PATH: $PATH:/app/vendor/libsndfile/bin
-LIBRARY_PATH: $LIBRARY_PATH:/app/vendor/libsndfile/lib
-EOF
+#!/bin/sh
+echo "--- {}"

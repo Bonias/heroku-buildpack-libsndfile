@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 echo "-----> Installing libsndfile 1.0.25"
 
-DIR=/app/vendor/libsndfile
+BUILD_DIR=$1
+
+$DIR=BUILD_DIR/vendor/libsndfile
 SRC_DIR=$DIR/src
 URL=http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.25.tar.gz
 
@@ -14,3 +16,9 @@ mv libsndfile-1.0.25 $SRC_DIR
 
 cd $SRC_DIR
 ./configure --prefix=$DIR --disable-static && make && make install
+
+echo "exporting PATH and LIBRARY_PATH" | indent
+PROFILE_PATH="$BUILD_DIR/.profile.d/libsndfile.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:$HOME/vendor/libsndfile/bin"' >> $PROFILE_PATH
+echo 'export LIBRARY_PATH="$LIBRARY_PATH:$HOME/vendor/libsndfile/lib"' >> $PROFILE_PATH
